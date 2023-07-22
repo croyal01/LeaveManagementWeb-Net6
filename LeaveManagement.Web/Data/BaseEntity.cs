@@ -1,6 +1,6 @@
 ﻿namespace LeaveManagement.Web.Data
 {
-	public abstract class Base
+	public abstract class BaseEntity
 	{
 		public long Id { get; set; }
 		

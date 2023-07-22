@@ -2,7 +2,7 @@
 
 namespace LeaveManagement.Web.Data
 {
-	public class LeaveAllocation: Base
+	public class LeaveAllocation: BaseEntity
 	{
 		//public long Id { get; set; }
 		public int NumberofDays { get; set; }

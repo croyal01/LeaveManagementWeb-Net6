@@ -6,29 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LeaveManagement.Web.Data;
+using AutoMapper;
+using LeaveManagement.Web.Models;
 
 namespace LeaveManagement.Web.Controllers
 {
     public class LeaveTypesController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public LeaveTypesController(ApplicationDbContext context)
+        private readonly IMapper mapper;
+        
+        public LeaveTypesController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            this.mapper = mapper;
         }
 
         // GET: LeaveTypes
         public async Task<IActionResult> Index()
         {
             //this also works
-            /*var leaveTypes = await _context.LeaveTypes.ToListAsync();
-            return View(leaveTypes);*/
+            var leaveTypes = mapper.Map<List<LeaveTypeVM>>( await _context.LeaveTypes.ToListAsync());
+            return View(leaveTypes);
 
-              return _context.LeaveTypes != null ? 
-                          View(await _context.LeaveTypes.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.LeaveTypes'  is null.");
-        }
+                    }
 
         // GET: LeaveTypes/Details/5
         public async Task<IActionResult> Details(long? id)
