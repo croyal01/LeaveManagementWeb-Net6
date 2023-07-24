@@ -55,22 +55,7 @@ namespace LeaveManagement.Web.Controllers
             return View();
         }
 
-        //// POST: LeaveTypes/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Name,DefaultDays,Id,DateCreated,DateModified")] LeaveType leaveType)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(leaveType);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(leaveType);
-        //}
-
+        
         // POST: LeaveTypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -88,21 +73,7 @@ namespace LeaveManagement.Web.Controllers
             return View(leaveTypeVM);
         }
 
-        // GET: LeaveTypes/Edit/5
-        //public async Task<IActionResult> Edit(long? id)
-        //{
-        //    if (id == null || _context.LeaveTypes == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var leaveType = await _context.LeaveTypes.FindAsync(id);
-        //    if (leaveType == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(leaveType);
-        //}
+       
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null || _context.LeaveTypes == null)
