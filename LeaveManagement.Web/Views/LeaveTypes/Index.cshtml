@@ -47,7 +47,7 @@
       <input type="hidden"  id="leaveTypeId" name="Id"/>  
 </form>
 
-@section scripts{
+@section Scripts{
     <script>
     $(function() {
         
@@ -62,11 +62,11 @@
             dangerMode: true
             }).then((confirm) => {
                 if (confirm) {
-                    //alert('You said yes');
+                    
                     var btn = $(this);
                     var id = btn.data("id");
                     $('#leaveTypeId').val(id);
-                    $('deleteForm').submit();
+                    $('#deleteForm').submit();
                 }
             });
         });
