@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore; 
 using AutoMapper;
 using LeaveManagement.Web.Configurations;
+using LeaveManagement.Web.Repositories;
+using LeaveManagement.Web.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,13 @@ builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireC
 	.AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped(typeof(IGeneraicRepository<>) , typeof(GenericRepository<>));
+builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
+
+//AddScoped => Creates and removes object reference as needed (service)
+//AddSingleton => Single instance of the object in the entire project (service)
+//AddTransient => Creates a new reference of the object when it is created (service)
 
 builder.Services.AddControllersWithViews();
 
