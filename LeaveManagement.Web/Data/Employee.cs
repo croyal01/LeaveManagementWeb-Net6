@@ -6,8 +6,8 @@ namespace LeaveManagement.Web.Data
 	{	public string? Firstname { get; set; }
 		public string? Lastname { get; set; }
 		public string? TaxId { get; set; } 
-		public string DateofBirth { get; set; }
-		public string DateJoined { get; set; }
+		public DateTime? DateofBirth { get; set; }
+		public DateTime? DateJoined { get; set; }
 
 	}
 }
