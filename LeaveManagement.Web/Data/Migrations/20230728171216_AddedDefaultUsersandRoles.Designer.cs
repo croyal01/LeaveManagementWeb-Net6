@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagement.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230728140044_AddedDefaultUsersandRoles")]
+    [Migration("20230728171216_AddedDefaultUsersandRoles")]
     partial class AddedDefaultUsersandRoles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,32 +108,36 @@ namespace LeaveManagement.Web.Data.Migrations
                         {
                             Id = "32274BF3-6899-4D73-818A-6B736D71E1B0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "75944251-cbbe-4b66-98d1-4785add5f269",
+                            ConcurrencyStamp = "2b2d1bd3-45db-4778-94d6-76018d2682ff",
+                            DateJoined = new DateTime(2023, 7, 28, 13, 12, 15, 909, DateTimeKind.Local).AddTicks(9525),
+                            DateofBirth = new DateTime(2023, 7, 28, 13, 12, 15, 909, DateTimeKind.Local).AddTicks(9445),
                             Email = "admin@localhost.com",
                             EmailConfirmed = false,
                             Firstname = "System",
                             Lastname = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ9cyinLi2vyzH/vUekZaBfYBNgd8SLDCoC6Ck68ul/whaqFc4TEizM9rsICEAm+ng==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENJ4VoFmA+y43SsANUWjBfUIwdle8ISUhn9k8iRuot/eWWaUGJL0niXEpzcy1BNyxA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e9765a22-ec13-44ac-95e4-eb8886f14538",
+                            SecurityStamp = "2ae78f5b-63f0-4404-ae45-5aa37acb3a96",
                             TwoFactorEnabled = false
                         },
                         new
                         {
                             Id = "7ca79698-5c1b-43c9-937c-d91b68b79e93",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2f3111f5-3005-4704-a870-ee21bf811abb",
+                            ConcurrencyStamp = "07b34b3a-d7ba-4146-805b-7afb75f93186",
+                            DateJoined = new DateTime(2023, 7, 28, 13, 12, 15, 919, DateTimeKind.Local).AddTicks(2552),
+                            DateofBirth = new DateTime(2023, 7, 28, 13, 12, 15, 919, DateTimeKind.Local).AddTicks(2519),
                             Email = "user@localhost.com",
                             EmailConfirmed = false,
                             Firstname = "System",
                             Lastname = "User",
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECGn1QBLUIOgmr+vzm4KfWCA0Jgdb+Qsh1/1PhRIyVF6uvrDugyG2cfkybNdWlyRZA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMVqLcSQ4PFYm7vHH765YjXzY/0vOk9Z1Fc0tqzzOCdCPRlp0UC1YEWEHXBDadN8TQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fb1bd75a-cb14-407a-aea8-e8a4dca91aab",
+                            SecurityStamp = "13b319fd-f45b-4fd3-a96a-93822094ac51",
                             TwoFactorEnabled = false
                         });
                 });
@@ -226,15 +230,15 @@ namespace LeaveManagement.Web.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7ca79698-5c1b-43c9-937c-d91b68b79e93",
-                            ConcurrencyStamp = "cda1fd3a-d98f-4370-9006-570fadaf0645",
+                            Id = "9C3910EA-483A-4057-A30F-07C3B736ACB0",
+                            ConcurrencyStamp = "636d9b93-7b4e-409f-a47e-f7f46ca9d0c1",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "C958C67E-A2BB-464A-90BE-C296B5138C42",
-                            ConcurrencyStamp = "36dab8b3-e821-4ae3-a411-4e3eea0c0798",
+                            Id = "F50E2E17-3B12-4EF1-90AB-EC5AB5C26B16",
+                            ConcurrencyStamp = "85859030-4ef9-4be0-872c-1fad97bf990d",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -332,12 +336,12 @@ namespace LeaveManagement.Web.Data.Migrations
                         new
                         {
                             UserId = "32274BF3-6899-4D73-818A-6B736D71E1B0",
-                            RoleId = "7ca79698-5c1b-43c9-937c-d91b68b79e93"
+                            RoleId = "9C3910EA-483A-4057-A30F-07C3B736ACB0"
                         },
                         new
                         {
-                            UserId = "670069df-7000-45f3-9aea-a730334c5631",
-                            RoleId = "7ca79698-5c1b-43c9-937c-d91b68b79e93"
+                            UserId = "7ca79698-5c1b-43c9-937c-d91b68b79e93",
+                            RoleId = "F50E2E17-3B12-4EF1-90AB-EC5AB5C26B16"
                         });
                 });
 

@@ -10,6 +10,7 @@ namespace LeaveManagement.Web.Configurations.Entities
 		public void Configure(EntityTypeBuilder<Employee> builder)
 		{
 			var hasher = new PasswordHasher<Employee>();
+			Employee n = new Employee();
 			builder.HasData(
 			
 				new Employee
@@ -19,7 +20,9 @@ namespace LeaveManagement.Web.Configurations.Entities
 					NormalizedEmail = "ADMIN@LOCALHOST.COM",
 					Firstname ="System",
 					Lastname = "Admin",
-					PasswordHash = hasher.HashPassword(null,"P@ssword1")
+					DateofBirth = DateTime.Now,
+					DateJoined = DateTime.Now,
+					PasswordHash = hasher.HashPassword(n,"P@ssword1")
 				},
 				new Employee
 				{
@@ -28,7 +31,9 @@ namespace LeaveManagement.Web.Configurations.Entities
 					NormalizedEmail = "USER@LOCALHOST.COM",
 					Firstname = "System",
 					Lastname = "User",
-					PasswordHash = hasher.HashPassword(null, "P@ssword1")
+					DateofBirth = DateTime.Now,
+					DateJoined = DateTime.Now,
+					PasswordHash = hasher.HashPassword(n, "P@ssword1")
 				}
 				);
 			//throw new NotImplementedException();

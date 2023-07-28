@@ -36,13 +36,13 @@ namespace LeaveManagement.Web.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DateJoined")
+                    b.Property<DateTime>("DateJoined")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("DateTime");
 
-                    b.Property<string>("DateofBirth")
+                    b.Property<DateTime>("DateofBirth")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
