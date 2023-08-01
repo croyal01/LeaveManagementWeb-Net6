@@ -17,11 +17,12 @@ namespace LeaveManagement.Web.Services
 			this.fromEmailAddress = fromEmailAddress;
 		}
 
-		public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+		
+		public Task SendEmailAsync(string email, string subject, string htmlMessage)
 		{
-			var message = new      MailMessage
-			{			
-				From = new (fromEmailAddress),
+			var message = new MailMessage
+			{
+				From = new MailAddress(fromEmailAddress),
 				Subject = subject,
 				Body = htmlMessage,
 				IsBodyHtml = true
@@ -31,9 +32,7 @@ namespace LeaveManagement.Web.Services
 			{
 				client.Send(message);
 			}
-
-
-			//throw new NotImplementedException();
+			return Task.CompletedTask;
 		}
 	}
 }
