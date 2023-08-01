@@ -13,7 +13,6 @@ namespace LeaveManagement.Web.Data
 
 		public string EmployeeID { get; set; }
 
-		//public DateTime DateCreated { get; set; } 
-		//public DateTime DateModified { get; set; }
+		public int Period { get; set; }
 	}
 }

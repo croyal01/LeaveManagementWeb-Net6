@@ -1,13 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 Namespace=LeaveManagement.Web.Data Type=ApplicationDbContext)" Category="CodeSchema_Class" Bounds="-52,-57.9998000008,177.736666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationDbContext" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationDbContext" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/ApplicationDbContext.cs StartLineNumber=6 StartCharacterOffset=14 EndLineNumber=6 EndCharacterOffset=34)" />
-    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-92,-138.0000000008,257.736666666667,145.0004" CommonLabel="LeaveManagement.Web" DelayedChildNodesState="Incomplete" Group="Expanded" Label="LeaveManagement.Web.dll" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Namespace" Bounds="-72,-97.9999000008,217.736666666667,85.0002" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="LeaveManagement.Web.Data" DelayedChildNodesState="Incomplete" Group="Expanded" Label="LeaveManagement.Web.Data" UseManualLocation="True" />
+    <Node Id="(@1 @3 Type=AddPeriodToAllocation)" Category="CodeSchema_Class" Bounds="246.891165866667,135.024589999982,181.776666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddPeriodToAllocation" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddPeriodToAllocation" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230801160916_AddPeriodToAllocation.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=39)" />
+    <Node Id="(@1 @3 Type=AddedDefaultUserRoles)" Category="CodeSchema_Class" Bounds="40.0422824266667,190.003029999982,186.453333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddedDefaultUserRoles" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddedDefaultUserRoles" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230801015144_AddedDefaultUserRoles.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=39)" />
+    <Node Id="(@1 @3 Type=AddedDefaultUsersandRoles)" Category="CodeSchema_Class" Bounds="40.0422824266667,299.959909999982,211.51,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddedDefaultUsersandRoles" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddedDefaultUsersandRoles" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230728171216_AddedDefaultUsersandRoles.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=43)" />
+    <Node Id="(@1 @3 Type=AddedLeaveTables)" Category="CodeSchema_Class" Bounds="40.0422824266667,80.046149999982,158.65,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AddedLeaveTables" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AddedLeaveTables" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230721191135_AddedLeaveTables.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=34)" />
+    <Node Id="(@1 @3 Type=ApplicationDbContextModelSnapshot)" Category="CodeSchema_Class" Bounds="40.0422824266667,355.938349999982,261.096666666667,25" CodeSchemaProperty_IsInternal="True" CommonLabel="ApplicationDbContextModelSnapshot" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationDbContextModelSnapshot" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/ApplicationDbContextModelSnapshot.cs StartLineNumber=13 StartCharacterOffset=18 EndLineNumber=13 EndCharacterOffset=51)" UseManualLocation="True" />
+    <Node Id="(@1 @3 Type=CreateIdentitySchema)" Category="CodeSchema_Class" Bounds="40.0422824266667,135.024589999982,176.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="CreateIdentitySchema" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CreateIdentitySchema" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs StartLineNumber=13 StartCharacterOffset=15 EndLineNumber=13 EndCharacterOffset=35)" />
+    <Node Id="(@1 @3 Type=ExtendedUserTable)" Category="CodeSchema_Class" Bounds="228.618331626667,80.046149999982,161.19,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ExtendedUserTable" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ExtendedUserTable" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230721143628_ExtendedUserTable.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=35)" />
+    <Node Id="(@1 @3 Type=UpdateDBWithNewUser)" Category="CodeSchema_Class" Bounds="256.410766053333,190.003029999982,187.793333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="UpdateDBWithNewUser" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="UpdateDBWithNewUser" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230801021730_UpdateDBWithNewUser.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=37)" />
+    <Node Id="(@1 @3 Type=UpdateDBWithNewUser2)" Category="CodeSchema_Class" Bounds="264.217704533333,244.981469999982,194.263333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="UpdateDBWithNewUser2" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="UpdateDBWithNewUser2" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230801022300_UpdateDBWithNewUser2.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=38)" />
+    <Node Id="(@1 @3 Type=UpdateDBWithNewUser3)" Category="CodeSchema_Class" Bounds="40.0422824266667,244.981469999982,194.263333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="UpdateDBWithNewUser3" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="UpdateDBWithNewUser3" SourceLocation="(Assembly=file:///D:/VisualStudioProjects/LeaveManagementNet6/LeaveManagement.Web/Data/Migrations/20230801022946_UpdateDBWithNewUser3.Designer.cs StartLineNumber=15 StartCharacterOffset=18 EndLineNumber=15 EndCharacterOffset=38)" />
+    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-0.00167318666657934,0.00761041370702742,498.526666666667,420.930939586275" CommonLabel="LeaveManagement.Web" DelayedChildNodesState="Incomplete" Group="Expanded" Label="LeaveManagement.Web.dll" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="19.9983268133334,40.0077104137071,458.526666666667,360.930739586275" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="LeaveManagement.Web.Data.Migrations" DelayedChildNodesState="Incomplete" Group="Expanded" Label="LeaveManagement.Web.Data.Migrations" />
   </Nodes>
   <Links>
-    <Link Source="@2" Target="@3" Category="Contains" FetchingParent="@2" />
-    <Link Source="@3" Target="(@1 Namespace=LeaveManagement.Web.Data Type=ApplicationDbContext)" Category="Contains" FetchingParent="@3" />
+    <Link Source="@2" Target="@4" Category="Contains" FetchingParent="@2" />
+    <Link Source="@4" Target="(@1 @3 Type=AddPeriodToAllocation)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=AddedDefaultUserRoles)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=AddedDefaultUsersandRoles)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=AddedLeaveTables)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=ApplicationDbContextModelSnapshot)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=CreateIdentitySchema)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=ExtendedUserTable)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=UpdateDBWithNewUser)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=UpdateDBWithNewUser2)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="(@1 @3 Type=UpdateDBWithNewUser3)" Category="Contains" FetchingParent="@4" />
   </Links>
   <Categories>
     <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
@@ -21,6 +39,7 @@
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsStatic" Label="Is Static" Description="Flag to indicate the member is a static member" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
@@ -55,7 +74,8 @@
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(4962a3c7-d83a-4342-9528-cfa35eb2a0b5.OutputPathUri)" />
     <Alias n="2" Id="(@1)" />
-    <Alias n="3" Id="(@1 Namespace=LeaveManagement.Web.Data)" />
+    <Alias n="3" Id="Namespace=LeaveManagement.Web.Data.Migrations" />
+    <Alias n="4" Id="(@1 @3)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
