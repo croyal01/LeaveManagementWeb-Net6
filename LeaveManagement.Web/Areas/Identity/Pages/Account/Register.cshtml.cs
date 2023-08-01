@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using LeaveManagement.Web.Constants;
 
 namespace LeaveManagement.Web.Areas.Identity.Pages.Account
 {
@@ -71,41 +72,6 @@ namespace LeaveManagement.Web.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [Display(Name = "First Name")]
-            public string Firstname { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [Display(Name = "Last Name")]
-            public string Lastname { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [Display(Name = "Date Of Birth")]
-            [DataType(DataType.DateTime)]
-            public DateTime DateOfBirth { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [Display(Name = "Date Joined")]
-            [DataType(DataType.DateTime)]
-            public DateTime DateJoined { get; set; }
-
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -115,11 +81,27 @@ namespace LeaveManagement.Web.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
+			[Required]
+			[Display(Name = "First Name")]
+			public string Firstname { get; set; }
+
+			[Required]
+			[Display(Name = "Last Name")]
+			public string Lastname { get; set; }
+
+			[DataType(DataType.DateTime)]
+			[Display(Name = "Date Of Birth")]
+			public DateTime? DateOfBirth { get; set; }
+
+			[DataType(DataType.DateTime)]
+			[Display(Name = "Date Joined")]
+			public DateTime? DateJoined { get; set; }
+
+			/// <summary>
+			///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+			///     directly from your code. This API may change or be removed in future releases.
+			/// </summary>
+			[Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -152,16 +134,18 @@ namespace LeaveManagement.Web.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                user.Firstname = Input.Firstname;
-                user.Lastname = Input.Lastname;
-				user.DateofBirth = Input.DateOfBirth;
-                user.DateJoined = Input.DateJoined;
+				user.Firstname = Input.Firstname;
+				user.Lastname = Input.Lastname;
+				user.DateJoined = Input.DateJoined ?? default;
+				user.DateofBirth = Input.DateOfBirth ?? default;
 
-                var result = await _userManager.CreateAsync(user, Input.Password);
+				var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -169,11 +153,11 @@ namespace LeaveManagement.Web.Areas.Identity.Pages.Account
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId, code, returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                   // await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                   //     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
