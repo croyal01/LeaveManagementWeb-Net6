@@ -1,4 +1,5 @@
-﻿using LeaveManagement.Web.Data;
+﻿using LeaveManagement.Web.Constants;
+using LeaveManagement.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -32,6 +33,19 @@ namespace LeaveManagement.Web.Configurations.Entities
 					Email = "user@localhost.com",
 					NormalizedEmail = "USER@LOCALHOST.COM",
 					UserName = "ADMIN@LOCALHOST.COM",
+					Firstname = "System",
+					Lastname = "User",
+					DateofBirth = DateTime.Now,
+					DateJoined = DateTime.Now,
+					PasswordHash = hasher.HashPassword(n, "P@ssword1"),
+					EmailConfirmed = true,
+				}, 
+				new Employee
+				{
+					Id = "6DA8BD90-197F-4B57-92A8-5DB1E912F01A",
+					Email = "supervisor@localhost.com",
+					NormalizedEmail = "supervisor@localhost.com".ToUpper(),
+					UserName = "SUPERVISOR@LOCALHOST.COM",
 					Firstname = "System",
 					Lastname = "User",
 					DateofBirth = DateTime.Now,

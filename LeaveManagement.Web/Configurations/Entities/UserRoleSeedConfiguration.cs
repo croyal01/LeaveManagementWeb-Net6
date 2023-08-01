@@ -21,6 +21,11 @@ namespace LeaveManagement.Web.Configurations.Entities
 				{
 					RoleId = "F50E2E17-3B12-4EF1-90AB-EC5AB5C26B16",
 					UserId = "7ca79698-5c1b-43c9-937c-d91b68b79e93"
+				},
+				new IdentityUserRole<string>
+				{
+					RoleId = "5D1DBC83-6022-4867-BCA5-7D2E88217056",
+					UserId = "6DA8BD90-197F-4B57-92A8-5DB1E912F01A"
 				}
 				);
 			//throw new NotImplementedException();
