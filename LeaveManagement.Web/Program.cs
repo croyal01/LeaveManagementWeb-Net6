@@ -30,6 +30,7 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddScoped(typeof(IGeneraicRepository<>) , typeof(GenericRepository<>));
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
+builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();	
 
 //AddScoped => Creates and removes object reference as needed (service)
 //AddSingleton => Single instance of the object in the entire project (service)

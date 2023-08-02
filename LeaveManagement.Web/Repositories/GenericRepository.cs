@@ -14,6 +14,8 @@ namespace LeaveManagement.Web.Repositories
 			this.context = context;
 		}
 
+		
+
 		public async Task<T> AddAsync(T entity)
 		{
 			await context.AddAsync(entity);
@@ -66,6 +68,13 @@ namespace LeaveManagement.Web.Repositories
 			await context.SaveChangesAsync();
 
 			//throw new NotImplementedException();
+		}
+
+		//public async Task IGeneraicRepository<T>.AddARangeAsync(List<T> Entities)
+		public async Task AddARangeAsync(List<T> Entities)
+		{
+			await context.AddRangeAsync(Entities);
+			await context.SaveChangesAsync();
 		}
 	}
 }

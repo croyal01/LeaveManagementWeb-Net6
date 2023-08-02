@@ -6,6 +6,7 @@
 		Task<List<T>> GetAllAsync();
 
 		Task<T> AddAsync(T entity);
+		Task AddARangeAsync(List<T> Entities);
 
 		Task<bool> Exists(long id);
 		Task DeleteAsyc(long id);

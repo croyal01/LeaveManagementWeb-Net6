@@ -14,5 +14,7 @@ namespace LeaveManagement.Web.Data
 		public string EmployeeID { get; set; }
 
 		public int Period { get; set; }
+
+		public bool? IsDeleted { get; set; }
 	}
 }

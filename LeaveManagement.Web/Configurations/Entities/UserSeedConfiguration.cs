@@ -32,7 +32,7 @@ namespace LeaveManagement.Web.Configurations.Entities
 					Id = "7ca79698-5c1b-43c9-937c-d91b68b79e93",
 					Email = "user@localhost.com",
 					NormalizedEmail = "USER@LOCALHOST.COM",
-					UserName = "ADMIN@LOCALHOST.COM",
+					UserName = "USER@LOCALHOST.COM",
 					Firstname = "System",
 					Lastname = "User",
 					DateofBirth = DateTime.Now,
