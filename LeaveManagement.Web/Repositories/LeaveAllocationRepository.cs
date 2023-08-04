@@ -38,7 +38,7 @@ namespace LeaveManagement.Web.Repositories
 
 				allocations.Add(new LeaveAllocation
 				{
-					EmployeeID = employee.Id,
+					EmployeeId = employee.Id,
 					LeaveTypeId = leaveTypeId,
 					Period = period,
 					NumberofDays = leaveType.DefaultDays
@@ -51,7 +51,7 @@ namespace LeaveManagement.Web.Repositories
 
 		public async Task<bool> AllocationExists(string employeeid, long leaveTypeId, int period)
 		{
-			return await context.LeaveAllocations.AnyAsync(q => q.EmployeeID == employeeid
+			return await context.LeaveAllocations.AnyAsync(q => q.EmployeeId == employeeid
 				&& q.LeaveTypeId == leaveTypeId
 				&& q.Period == period);
 		}
@@ -60,7 +60,7 @@ namespace LeaveManagement.Web.Repositories
 		{
 			var allocations = await context.LeaveAllocations
 				.Include(q => q.LeaveType)
-				.Where(q => q.EmployeeID == employeeid).ToListAsync();
+				.Where(q => q.EmployeeId == employeeid).ToListAsync();
 
 
 			var employee = await userManager.FindByIdAsync(employeeid);
@@ -70,6 +70,40 @@ namespace LeaveManagement.Web.Repositories
 
 			return employeeAllocationModel;
 		}
-	}
+		public async Task<LeaveAllocationEditLVM> GetEmployeeAllocation(long id)
+		{
+			var allocation = await context.LeaveAllocations
+				.Include(q => q.LeaveType)
+				.FirstOrDefaultAsync(q => q.Id == id);
 
+			if (allocation == null) return null;
+
+			var employee = await userManager.FindByIdAsync(allocation.EmployeeId);
+
+
+			var model = mapper.Map<LeaveAllocationEditLVM>(allocation);
+			model.Employee = mapper.Map<EmployeeListVM>(await userManager.FindByIdAsync(allocation.EmployeeId));
+
+			//employeeAllocationModel.leaveAllocations = mapper.Map<List<LeaveAllocationVM>>(allocations);
+
+			return model;
+		}
+
+		public async Task<bool> UpdateEmployeeAllocation(LeaveAllocationEditLVM model)
+		{
+			var leaveAllocation = await  GetAsync(model.Id);
+			if (leaveAllocation == null)
+			{
+				return false;
+			}
+			leaveAllocation.Period = model.Period;
+			leaveAllocation.NumberofDays = model.NumberofDays;
+			await UpdateAsync(leaveAllocation);
+
+			return true;
+
+			
+		}
+
+	}
 }

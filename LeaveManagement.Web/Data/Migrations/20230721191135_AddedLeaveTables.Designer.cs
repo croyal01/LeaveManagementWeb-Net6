@@ -120,7 +120,7 @@ namespace LeaveManagement.Web.Data.Migrations
                     b.Property<DateTime>("DateModified")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EmployeeID")
+                    b.Property<string>("EmployeeId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
