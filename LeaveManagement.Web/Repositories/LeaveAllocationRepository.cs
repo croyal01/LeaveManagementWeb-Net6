@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaveManagement.Web.Repositories
 {
-	public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILeaveAllocationRepository
+	public class LeaveAllocationRepository : IGenericRepository<LeaveAllocation>, ILeaveAllocationRepository
 	{
 		private readonly UserManager<Employee> userManager;
 		private readonly ILeaveTypeRepository leaveTypeRepository;

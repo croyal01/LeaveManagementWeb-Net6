@@ -87,19 +87,7 @@ namespace LeaveManagement.Web.Controllers
 					}
 				}
 
-					//if (ModelState.IsValid)
-					//{
-					//	var leaveAllocation = await leaveAllocationRepository.GetAsync(model.Id);
-					//	if (leaveAllocation == null)
-					//	{
-					//		return NotFound();
-					//	}
-					//	leaveAllocation.Period = model.Period;
-					//	leaveAllocation.NumberofDays = model.NumberofDays;
-					//	await leaveAllocationRepository.UpdateAsync(leaveAllocation);
-					//	//return RedirectToAction(nameof(Index));
-					//	return RedirectToAction(nameof(ViewAllocations), new { id = model.EmployeeId });
-					//}
+					
 
 			}
 			catch (Exception ex)

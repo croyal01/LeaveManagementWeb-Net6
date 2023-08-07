@@ -8,6 +8,7 @@ using LeaveManagement.Web.Contracts;
 using LeaveManagement.Web.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,9 +29,10 @@ builder.Services.AddTransient<IEmailSender>(s => new EmailSender("localhost", 25
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
-builder.Services.AddScoped(typeof(IGeneraicRepository<>) , typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGeneraicRepository<>) , typeof(IGenericRepository<>));
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
-builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();	
+builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
+builder.Services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
 
 //AddScoped => Creates and removes object reference as needed (service)
 //AddSingleton => Single instance of the object in the entire project (service)

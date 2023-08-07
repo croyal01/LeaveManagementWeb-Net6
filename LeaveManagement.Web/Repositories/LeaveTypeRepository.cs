@@ -3,7 +3,7 @@ using LeaveManagement.Web.Data;
 
 namespace LeaveManagement.Web.Repositories
 {
-	public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepository
+	public class LeaveTypeRepository : IGenericRepository<LeaveType>, ILeaveTypeRepository
 	{
 
 
