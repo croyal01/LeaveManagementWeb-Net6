@@ -50,7 +50,7 @@ namespace LeaveManagement.Web.Controllers
         {
             var model = new LeaveRequestCreateVM
             {
-                StartDate = DateTime.Now,   
+                
                 LeaveTypes = new SelectList(_context.LeaveTypes, "Id", "Name")
                 
             };
@@ -75,12 +75,13 @@ namespace LeaveManagement.Web.Controllers
                 {
                     _context.Add(leaveRequest);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Create)); //Index
                 }
             }
             catch (System.Exception e)
             {
                 var l = e.Message;
+                throw new Exception(l, e);  
             }
             ViewData["LeaveTypeId"] = new SelectList(_context.LeaveTypes, "Id", "Name", leaveRequest.LeaveTypeId);
             return View(leaveRequest);

@@ -17,10 +17,13 @@ namespace LeaveManagement.Web.Models
 		public long LeaveTypeId { get; set; }
 
 		[Display(Name = "Start Date")]
-		public DateTime StartDate { get; set; }
+		public DateTime? StartDate { get; set; }
 		[Display(Name = "End Date")]
-		public DateTime EndDate { get; set; }
+		public DateTime? EndDate { get; set; }
 		public string? RequestComments { get; set; }
+
+		[Display(Name ="Requested Date")]
+		public DateTime DateRequested { get; set; }
 
 
 	}
