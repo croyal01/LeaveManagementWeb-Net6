@@ -33,6 +33,7 @@ builder.Services.AddScoped(typeof(IGeneraicRepository<>) , typeof(IGenericReposi
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
 builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 builder.Services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
+builder.Services.AddHttpContextAccessor(); //gives me login user information
 
 //AddScoped => Creates and removes object reference as needed (service)
 //AddSingleton => Single instance of the object in the entire project (service)

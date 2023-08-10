@@ -11,10 +11,7 @@ namespace LeaveManagement.Web.Models
 	{
 		[Display(Name = "Leave Type")]
 		
-		public LeaveType LeaveTypes { get; set; }
-
-		[Display(Name = "Leave Type Id")]
-		public long LeaveTypeId { get; set; }
+		public LeaveTypeVM LeaveType { get; set; }
 
 		[Display(Name = "Start Date")]
 		public DateTime StartDate { get; set; }
@@ -26,6 +23,6 @@ namespace LeaveManagement.Web.Models
 		public DateTime DateRequested { get; set; }
 		public string? RequestComments { get; set; }
 		[Display(Name = "Requesting Employee Id")]
-		public string? RequestingEmployeeId { get; set; }
+		//public string? RequestingEmployeeId { get; set; }
 	}
 }

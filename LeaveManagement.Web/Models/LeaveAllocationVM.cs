@@ -15,9 +15,6 @@ namespace LeaveManagement.Web.Models
 		[Display(Name = "Leave Type")]
 		public LeaveTypeVM? LeaveType { get; set; }
 
-		//[Display(Name = "Date Created")]
-		//public DateTime DateCreated { get; set; }
-
 		[Display(Name = "Allocation Period")]
 		[Required]
 		public int Period { get; set; }
