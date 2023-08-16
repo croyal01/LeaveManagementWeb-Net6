@@ -7,22 +7,32 @@ using System.ComponentModel.DataAnnotations;
 namespace LeaveManagement.Web.Models
 {
 
-	public class LeaveRequestVM
+	public class LeaveRequestVM : LeaveRequestCreateVM
 	{
+
+		public long Id { get; set; }
+
+		[Display(Name = "Date Requested")]
+		[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+		[DataType(DataType.Date)]
+		public DateTime DateRequested { get; set; }
+
+
+
 		[Display(Name = "Leave Type")]
-		
 		public LeaveTypeVM LeaveType { get; set; }
 
-		[Display(Name = "Start Date")]
-		public DateTime StartDate { get; set; }
-		[Display(Name = "End Date")]
-		public DateTime EndDate { get; set; }
-		public bool Cancelled { get; set; }
 		public bool? Approved { get; set; }
-		[Display(Name = "Date Requested")]
-		public DateTime DateRequested { get; set; }
-		public string? RequestComments { get; set; }
-		[Display(Name = "Requesting Employee Id")]
-		//public string? RequestingEmployeeId { get; set; }
+		public bool Cancelled { get; set; }
+		public EmployeeListVM Employee { get; set; }
+		public string? RequestingEmployeeId { get; set; }
+		
+		
+		 
+       
+
+        public int NumberOfDays { get; set; }
+	
+
 	}
 }

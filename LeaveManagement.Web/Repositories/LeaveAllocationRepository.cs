@@ -4,11 +4,12 @@ using LeaveManagement.Web.Contracts;
 using LeaveManagement.Web.Data;
 using LeaveManagement.Web.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LeaveManagement.Web.Repositories
 {
-	public class LeaveAllocationRepository : IGenericRepository<LeaveAllocation>, ILeaveAllocationRepository
+	public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILeaveAllocationRepository
 	{
 		private readonly UserManager<Employee> userManager;
 		private readonly ILeaveTypeRepository leaveTypeRepository;
@@ -70,11 +71,11 @@ namespace LeaveManagement.Web.Repositories
 
 			return employeeAllocationModel;
 		}
-		public async Task<LeaveAllocationEditLVM> GetEmployeeAllocation(long id)
+		public async Task<LeaveAllocationEditLVM> GetEmployeeAllocation(string id)//, long LeaveTypeId
 		{
 			var allocation = await context.LeaveAllocations
 				.Include(q => q.LeaveType)
-				.FirstOrDefaultAsync(q => q.Id == id);
+				.FirstOrDefaultAsync(q => q.EmployeeId == id);
 
 			if (allocation == null) return null;
 
@@ -91,7 +92,7 @@ namespace LeaveManagement.Web.Repositories
 
 		public async Task<bool> UpdateEmployeeAllocation(LeaveAllocationEditLVM model)
 		{
-			var leaveAllocation = await  GetAsync(model.Id);
+			var leaveAllocation = await GetAsync(model.Id);
 			if (leaveAllocation == null)
 			{
 				return false;
@@ -102,8 +103,7 @@ namespace LeaveManagement.Web.Repositories
 
 			return true;
 
-			
-		}
 
+		}
 	}
 }

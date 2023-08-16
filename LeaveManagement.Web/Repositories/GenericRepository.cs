@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaveManagement.Web.Repositories
 {
-	public class IGenericRepository<T> : IGeneraicRepository<T> where T : class
+	public class GenericRepository<T> : IGeneraicRepository<T> where T : class
 	{
 		private readonly ApplicationDbContext context;
 
 
-		public IGenericRepository(ApplicationDbContext context)
+		public GenericRepository(ApplicationDbContext context)
 		{
 			this.context = context;
 		}

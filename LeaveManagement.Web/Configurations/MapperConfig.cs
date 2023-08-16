@@ -16,6 +16,7 @@ namespace LeaveManagement.Web.Configurations
 			CreateMap<LeaveAllocation, LeaveAllocationEditLVM>().ReverseMap();
 			CreateMap<LeaveRequest, LeaveRequestVM>().ReverseMap();
 			CreateMap<LeaveRequest, LeaveRequestCreateVM>().ReverseMap();
+			CreateMap<LeaveRequest, AdminLeaveRequestsViewVM>().ReverseMap();
 		}
 	}
 }

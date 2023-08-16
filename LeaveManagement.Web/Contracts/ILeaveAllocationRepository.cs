@@ -1,5 +1,6 @@
 ﻿using LeaveManagement.Web.Data;
 using LeaveManagement.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LeaveManagement.Web.Contracts
 {
@@ -11,8 +12,9 @@ namespace LeaveManagement.Web.Contracts
 
 		Task<EmployeeAllocationVM> GetEmployeeAllocations(string employeeid);
 
-		Task<LeaveAllocationEditLVM> GetEmployeeAllocation(long id);
+		Task<LeaveAllocationEditLVM> GetEmployeeAllocation(string id); //long LeaveTypeId)
 		Task<bool> UpdateEmployeeAllocation(LeaveAllocationEditLVM model);
-
+		//Task<ActionResult> GetEmployeeAllocation(int id);
+		
 	}
 }
