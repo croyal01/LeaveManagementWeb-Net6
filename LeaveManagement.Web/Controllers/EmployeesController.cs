@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using LeaveManagement.Web.Constants;
-using LeaveManagement.Web.Contracts;
-using LeaveManagement.Web.Data;
-using LeaveManagement.Web.Models;
+using LeaveManagement.Common.Constants;
+using LeaveManagement.Application.Contracts;
+using LeaveManagement.Data;
+using LeaveManagement.Common.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -61,7 +61,7 @@ namespace LeaveManagement.Web.Controllers
 		}
 
 		// GET: EmployeesController/Edit/5
-		public async Task<ActionResult> EditAllocation(string id)
+		public async Task<ActionResult> EditAllocation(int id)
 		{
 			
 			var model = await leaveAllocationRepository.GetEmployeeAllocation(id); //may need to use the user manager to get the correct id

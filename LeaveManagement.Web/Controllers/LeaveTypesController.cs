@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LeaveManagement.Web.Data;
+using LeaveManagement.Data;
 using AutoMapper;
-using LeaveManagement.Web.Models;
-using LeaveManagement.Web.Contracts;
-using LeaveManagement.Web.Repositories;
-using LeaveManagement.Web.Constants;
+using LeaveManagement.Common.Models;
+using LeaveManagement.Application.Contracts;
 using Microsoft.AspNetCore.Authorization;
+using LeaveManagement.Common.Constants;
 
 namespace LeaveManagement.Web.Controllers
 {
@@ -164,28 +163,7 @@ namespace LeaveManagement.Web.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> DeleteConfirmed(long id)
 		{
-			//if (_context.LeaveTypes == null)
-			//{
-			//	return Problem("Entity set 'ApplicationDbContext.LeaveTypes'  is null.");
-			//}
-			//var leaveType = await _context.LeaveTypes.FindAsync(id);
-			//if (leaveType != null)
-			//{
-			//	_context.LeaveTypes.Remove(leaveType);
-			//}
-
-			//await _context.SaveChangesAsync();
-			if (leaveTypeRepository == null)
-			{
-				return Problem("Entity set 'ApplicationDbContext.LeaveTypes'  is null.");
-			}
-			var leaveType = await leaveTypeRepository.GetAsync(id);
-			if (leaveType != null)
-			{
-				await leaveTypeRepository.DeleteAsyc(id);
-			}
-
-			//await _context.SaveChangesAsync();
+			await leaveTypeRepository.DeleteAsync(id);
 			return RedirectToAction(nameof(Index));
 		}
 		[HttpPost]

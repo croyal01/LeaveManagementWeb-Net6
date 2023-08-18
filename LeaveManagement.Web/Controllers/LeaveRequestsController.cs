@@ -1,10 +1,9 @@
-﻿using LeaveManagement.Web.Contracts;
-using LeaveManagement.Web.Models;
+﻿using LeaveManagement.Common.Constants;
+using LeaveManagement.Application.Contracts;
+using LeaveManagement.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using LeaveManagement.Web.Constants;
-using AutoMapper;
 
 namespace LeaveManagement.Web.Controllers
 {
@@ -20,7 +19,7 @@ namespace LeaveManagement.Web.Controllers
 			this.leaveTypeRepository = leaveTypeRepository;
 		}
 
-		[Authorize(Roles = Roles.Administrator)]
+		[System.Web.Mvc.Authorize(Roles = Roles.Administrator)]
 		// GET: LeaveRequests
 		public async Task<IActionResult> Index()
 		{
@@ -99,7 +98,7 @@ namespace LeaveManagement.Web.Controllers
 				if (ModelState.IsValid)
 				{
 					var isValidRequest = await leaveRequestRepository.CreateLeaveRequest(model);
-					if (isValidRequest==null)
+					if (isValidRequest)
 					{
 						return RedirectToAction(nameof(MyLeave));
 					}
