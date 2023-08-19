@@ -1,0 +1,1 @@
+﻿CREATE LOGIN lmUser WITH PASSWORD = 'P@sssword1';
